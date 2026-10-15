@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Timothy Jones - Heavy Equipment Operator & CDL-A Candidate</title>
 
-  <!-- PWA Manifest & App Icons (Explicit relative paths for GitHub Pages subfolder) -->
+  <!-- PWA Manifest & App Icons -->
   <link rel="manifest" href="./manifest.json">
   <link rel="icon" type="image/jpeg" href="./profile.jpg">
   <link rel="apple-touch-icon" href="./profile.jpg">
@@ -607,7 +607,7 @@
         <div class="subhead">Heavy Equipment Operator • CDL-A Commercial Driver Candidate</div>
         <div class="header-contacts">
           <span class="contact-item">📍 Front Royal, VA 22630</span>
-          <a class="contact-item" href="tel:5405550199">📞 (540) 555-0199</a>
+          <a class="contact-item" href="tel:5406600497">📞 (540) 660-0497</a>
           <button class="contact-item" onclick="openDirectMessageModal()">💬 Direct Dispatch Live Chat</button>
           <a class="contact-item" href="mailto:tjones.equipment@gmail.com">✉️ tjones.equipment@gmail.com</a>
         </div>
@@ -782,16 +782,13 @@
   </div>
 
   <script>
-    // Robust Image Loading & Fallback
     function handleImageFallback(imgElement) {
       if (!imgElement.getAttribute('data-tried-variants')) {
         imgElement.setAttribute('data-tried-variants', '1');
-        // Try upper-case extension or cache-busted path
         imgElement.src = './profile.JPEG';
         imgElement.onerror = () => {
           imgElement.src = './profile.PNG';
           imgElement.onerror = () => {
-            // Render styled initials avatar fallback if file is missing
             imgElement.style.display = 'none';
             if (imgElement.parentElement) {
               imgElement.parentElement.style.background = '#1e293b';
