@@ -1,9 +1,10 @@
-const CACHE_NAME = 'tjones-cdl-v1';
+const CACHE_NAME = 'tjones-cdl-v2';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './manifest.json',
-  './profile.jpg'
+  './profile.jpg',
+  './timothy-mvr-dot-report.pdf'
 ];
 
 self.addEventListener('install', (event) => {
@@ -30,7 +31,12 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   // Let live chat and API polling bypass service worker cache
-  if (event.request.url.includes('/send') || event.request.url.includes('/poll') || event.request.url.includes('telegram')) {
+  if (
+    event.request.url.includes('/send') || 
+    event.request.url.includes('/poll') || 
+    event.request.url.includes('telegram') ||
+    event.request.url.includes('workers.dev')
+  ) {
     return;
   }
   event.respondWith(
